@@ -66,6 +66,7 @@ public class FileUploadServices {
         flight.setFilePath(filePath);
         flight.setUploadTime(LocalDateTime.now());
         flight.setTotalPoints(0);
+        flight.setUploadStatus("PROCESSING");
 
         return flightRepository.save(flight);
     }
@@ -77,6 +78,7 @@ public class FileUploadServices {
         flight.setFilePath(file.getAbsolutePath());
         flight.setUploadTime(LocalDateTime.now());
         flight.setTotalPoints(0);
+        flight.setUploadStatus("PROCESSING");
 
         return flightRepository.save(flight);
     }

@@ -83,5 +83,17 @@ public class FlightController {
                 .body(resource);
 
     }
+    @GetMapping("/{id}/status")
+    public String getFlightStatus(@PathVariable Long id) {
+
+        Flight flight = flightService.getFlightById(id);
+
+        return "Flight ID : " + flight.getId()
+                + "\nStatus : " + flight.getUploadStatus()
+                + "\nReason : "
+                + (flight.getFailureReason() == null
+                ? "None"
+                : flight.getFailureReason());
+    }
 
 }

@@ -49,7 +49,8 @@ public class UploadController {
                 flight
     );
 
-        return "File uploaded and processed successfully";
+        return "Flight uploaded successfully. Background processing started. Flight ID = "
+                + flight.getId();
 
     }
 }

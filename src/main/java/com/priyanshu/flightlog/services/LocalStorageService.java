@@ -11,7 +11,7 @@ import java.nio.file.StandardCopyOption;
 public class LocalStorageService {
 
     private static final String STORAGE_FOLDER =
-            "D:\\FlightParser\\storage";
+            "k:\\FlightParser\\storage";
 
     public String store(File sourceFile) throws IOException {
 

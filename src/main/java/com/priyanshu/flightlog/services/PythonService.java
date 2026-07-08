@@ -59,12 +59,26 @@ public class PythonService {
 
                 System.out.println("Starting local storage...");
 
-                String storagePath =
-                        localStorageService.store(new File(binFilePath));
+                try {
 
-                System.out.println("Storage completed: " + storagePath);
+                    String storagePath =
+                            localStorageService.store(new File(binFilePath));
 
-                flight.setStoragePath(storagePath);
+                    System.out.println("Storage completed: " + storagePath);
+
+                    flight.setStoragePath(storagePath);
+
+                    flight.setUploadStatus("SUCCESS");
+                    flight.setFailureReason(null);
+
+                }catch (Exception e) {
+
+                        System.out.println("Storage Failed : " + e.getMessage());
+
+                        flight.setUploadStatus("FAILED");
+
+                        flight.setFailureReason(e.getMessage());
+                    }
 
                 flightRepository.save(flight);
 

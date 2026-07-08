@@ -32,6 +32,9 @@ public class Flight {
 
 
     private Integer totalPoints;
+    private String uploadStatus;
+
+    private String failureReason;
 
 
 
@@ -94,6 +97,20 @@ public class Flight {
 
     public void setStoragePath(String storagePath) {
         this.storagePath = storagePath;
+    }
+    public String getUploadStatus() {
+        return uploadStatus;
+    }
+
+    public void setUploadStatus(String uploadStatus) {
+        this.uploadStatus = uploadStatus;
+    }
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
     }
 
 
